@@ -1,10 +1,31 @@
-# app.py
 from flask import Flask, render_template, request
 from mental_health_checker import MentalHealthChecker
+from dempster_shafer import dempster_shafer
 
-# Inisialisasi aplikasi Flask
 app = Flask(__name__)
 checker = MentalHealthChecker()
+
+symptoms = {
+    "G01": "Sering sakit kepala",
+    "G02": "Tidak nafsu makan",
+    "G03": "Sulit tidur",
+    "G04": "Mudah takut",
+    "G05": "Cemas atau khawatir",
+    "G07": "Pencernaan terganggu",
+    "G08": "Sulit berpikir jernih",
+    "G09": "Merasa tidak bahagia",
+    "G11": "Kesulitan menjalani aktivitas sehari-hari",
+    "G12": "Sulit mengambil keputusan",
+}
+
+# Route untuk halaman utama (input gejala)
+@app.route("/dempster", methods=["GET", "POST"])
+def dempster():
+    if request.method == "POST":
+        selected_symptoms = request.form.getlist("gejala")
+        results = dempster_shafer(selected_symptoms)
+        return render_template("hasil.html", results=results)
+    return render_template("dempster.html", symptoms=symptoms)
 
 # Rute untuk halaman utama
 @app.route("/")

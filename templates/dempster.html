@@ -11,7 +11,7 @@
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="md:flex md:items-center md:gap-12">
-            <a class="block text-teal-600" href="#">
+            <a class="block text-teal-600" href="/">
               <h1 class="font-extrabold text-3xl text-black">MentalCare</h1>
             </a>
           </div>
@@ -47,9 +47,9 @@
                 <li>
                   <a
                     class="text-gray-500 transition hover:text-gray-500/75"
-                    href="/dempster"
+                    href="#"
                   >
-                    Dempster Shafer
+                    Blog
                   </a>
                 </li>
               </ul>
@@ -112,41 +112,42 @@
           >
             Check Mental Health
           </a>
-          <a
-            class="block px-4 py-2 transition hover:text-gray-500/75"
-            href="/dempster"
-            >Dempster Shafer</a
+          <a class="block px-4 py-2 transition hover:text-gray-500/75" href="#"
+            >Blog</a
           >
         </nav>
       </div>
     </header>
-    <section class="flex justify-center items-center h-screen bg-gray-100">
-      <div
-        class="bg-white shadow-md rounded-lg p-6 max-w-lg w-full text-center"
-      >
-        <h1 class="text-2xl font-bold">Pilih Gejala Anda</h1>
-        <form method="POST" class="mt-6">
-          {% for id, symptom in symptoms.items() %}
-          <div class="mb-2 flex items-center">
-            <input
-              type="checkbox"
-              id="{{ id }}"
-              name="symptoms"
-              value="{{ id }}"
-              class="mr-2"
-            />
-            <label for="{{ id }}">{{ symptom }}</label>
+    <main class="h-screen flex items-center justify-center bg-gray-100">
+      <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+        <h1 class="text-2xl font-bold mb-6 text-center">
+          Cek Kesehatan Mental Anda
+        </h1>
+        <form method="POST" action="/dempster">
+          <div class="grid grid-cols-2 gap-4">
+            {% for key, value in symptoms.items() %}
+            <label class="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="gejala"
+                value="{{ key }}"
+                class="form-checkbox h-5 w-5 text-blue-600"
+              />
+              <span class="ml-2 text-gray-700">{{ value }}</span>
+            </label>
+            {% endfor %}
           </div>
-          {% endfor %}
-          <button
-            type="submit"
-            class="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600"
-          >
-            Kirim
-          </button>
+          <div class="flex justify-center mt-6">
+            <button
+              type="submit"
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            >
+              Cek Hasil
+            </button>
+          </div>
         </form>
       </div>
-    </section>
+    </main>
     <footer class="bg-white">
       <div
         class="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24"
