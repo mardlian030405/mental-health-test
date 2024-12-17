@@ -10,14 +10,47 @@
     />
   </head>
   <body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto py-8 text-center">
-      <h1 class="text-2xl font-bold">Hasil Diagnosa</h1>
-      <p class="mt-4">{{ result }}</p>
-      <a
-        href="/"
-        class="bg-blue-500 text-white px-4 py-2 mt-6 inline-block rounded"
-        >Kembali ke Beranda</a
+    <!-- Container Utama -->
+    <div class="flex justify-center items-center min-h-screen">
+      <div
+        class="bg-white shadow-md rounded-lg p-8 max-w-2xl w-full text-center"
       >
+        <!-- Judul -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">
+          Hasil Diagnosa Anda
+        </h1>
+
+        <!-- Hasil Diagnosa -->
+        <div class="mb-6">
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Berdasarkan gejala yang Anda pilih, hasil diagnosa adalah:
+          </p>
+          <div
+            class="mt-4 bg-green-50 text-green-700 font-semibold rounded-lg p-4"
+          >
+            {{ result }}
+          </div>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="flex justify-center gap-4">
+          <!-- Tombol untuk Kembali -->
+          <a
+            href="/consultation"
+            class="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded"
+          >
+            Cek Gejala Lagi
+          </a>
+
+          <!-- Tombol untuk Kembali ke Home -->
+          <a
+            href="/"
+            class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded"
+          >
+            Kembali ke Home
+          </a>
+        </div>
+      </div>
     </div>
   </body>
 </html>

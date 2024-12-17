@@ -15,6 +15,10 @@ def home():
 def about():
     return render_template("about.html")
 
+@app.route("/symthoms")
+def sympthoms():
+    return render_template("symthoms.html")
+
 # Rute untuk halaman konsultasi
 @app.route("/consultation", methods=["GET", "POST"])
 def consultation():

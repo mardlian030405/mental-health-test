@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Konsultasi</title>
+    <title>Aturan Diagnosa dan Jawaban Gejala</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-100 text-gray-800">
     <header class="bg-white">
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -91,41 +91,121 @@
         </div>
       </div>
     </header>
-    <section class="flex justify-center items-center h-screen bg-gray-100">
-      <div
-        class="bg-white shadow-md rounded-lg p-6 max-w-lg w-full text-center"
-      >
-        <h1 class="text-2xl font-bold">Pilih Gejala Anda</h1>
-        <form method="POST" class="mt-6">
-          {% for id, symptom in symptoms.items() %}
-          <div class="mb-2 flex items-center">
-            <input
-              type="checkbox"
-              id="{{ id }}"
-              name="symptoms"
-              value="{{ id }}"
-              class="mr-2"
-            />
-            <label for="{{ id }}">{{ symptom }}</label>
-          </div>
-          {% endfor %}
-          <button
-            type="submit"
-            class="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600"
-          >
-            Kirim
-          </button>
-        </form>
-      </div>
-    </section>
+    <main class="container mx-auto px-4 py-8">
+      <!-- Diagnosa Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Gangguan Mental Organik -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold text-green-700 mb-3">
+            Gangguan Mental Organik (P01)
+          </h2>
+          <ul class="list-disc ml-5 text-sm">
+            <li>G01: Sering sakit kepala</li>
+            <li>G05: Cemas atau khawatir</li>
+            <li>G08: Sulit berpikir jernih</li>
+            <li>G11: Kesulitan menjalani aktivitas sehari-hari</li>
+            <li>G12: Sulit mengambil keputusan</li>
+          </ul>
+        </div>
 
+        <!-- Gangguan Penggunaan NAPZA -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold text-blue-600 mb-3">
+            Gangguan Penggunaan NAPZA (P02)
+          </h2>
+          <ul class="list-disc ml-5 text-sm">
+            <li>G03: Sulit tidur</li>
+            <li>G05: Cemas atau khawatir</li>
+            <li>G07: Pencernaan terganggu</li>
+            <li>G14: Tidak mampu melakukan hal-hal bermanfaat</li>
+            <li>G18: Merasa lelah sepanjang waktu</li>
+            <li>G19: Rasa tidak enak di perut</li>
+            <li>G20: Mudah lelah</li>
+          </ul>
+        </div>
+
+        <!-- Skizofrenia -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold text-yellow-600 mb-3">
+            Skizofrenia dan Gangguan Psikotik Kronik Lain (P03)
+          </h2>
+          <ul class="list-disc ml-5 text-sm">
+            <li>G03: Sulit tidur</li>
+            <li>G04: Mudah takut</li>
+            <li>G08: Sulit berpikir jernih</li>
+            <li>G09: Merasa tidak bahagia</li>
+            <li>G11: Kesulitan menjalani aktivitas sehari-hari</li>
+            <li>G12: Sulit mengambil keputusan</li>
+            <li>G13: Pekerjaan sehari-hari terganggu</li>
+            <li>G14: Tidak mampu melakukan hal-hal bermanfaat</li>
+            <li>G15: Kehilangan minat pada berbagai hal</li>
+          </ul>
+        </div>
+
+        <!-- Gangguan Psikotik Akut -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold text-red-500 mb-3">
+            Gangguan Psikotik Akut (P04)
+          </h2>
+          <ul class="list-disc ml-5 text-sm">
+            <li>G02: Tidak nafsu makan</li>
+            <li>G03: Sulit tidur</li>
+            <li>G05: Cemas atau khawatir</li>
+            <li>G08: Sulit berpikir jernih</li>
+            <li>G09: Merasa tidak bahagia</li>
+            <li>G14: Tidak mampu melakukan hal-hal bermanfaat</li>
+            <li>G15: Kehilangan minat pada berbagai hal</li>
+            <li>G16: Merasa tidak berharga</li>
+            <li>G17: Pikiran untuk mengakhiri hidup</li>
+          </ul>
+        </div>
+
+        <!-- Gangguan Bipolar -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold text-purple-600 mb-3">
+            Gangguan Bipolar (P05)
+          </h2>
+          <ul class="list-disc ml-5 text-sm">
+            <li>G02: Tidak nafsu makan</li>
+            <li>G03: Sulit tidur</li>
+            <li>G05: Cemas atau khawatir</li>
+            <li>G09: Merasa tidak bahagia</li>
+            <li>G11: Kesulitan menjalani aktivitas sehari-hari</li>
+            <li>G12: Sulit mengambil keputusan</li>
+            <li>G13: Pekerjaan sehari-hari terganggu</li>
+            <li>G14: Tidak mampu melakukan hal-hal bermanfaat</li>
+            <li>G15: Kehilangan minat pada berbagai hal</li>
+            <li>G16: Merasa tidak berharga</li>
+            <li>G17: Pikiran untuk mengakhiri hidup</li>
+          </ul>
+        </div>
+
+        <!-- Gangguan Depresi -->
+        <div class="bg-white rounded-lg shadow p-6">
+          <h2 class="text-xl font-bold text-pink-600 mb-3">
+            Gangguan Depresi (P06)
+          </h2>
+          <ul class="list-disc ml-5 text-sm">
+            <li>G01: Sering sakit kepala</li>
+            <li>G02: Tidak nafsu makan</li>
+            <li>G05: Cemas atau khawatir</li>
+            <li>G08: Sulit berpikir jernih</li>
+            <li>G09: Merasa tidak bahagia</li>
+            <li>G11: Kesulitan menjalani aktivitas sehari-hari</li>
+            <li>G15: Kehilangan minat pada berbagai hal</li>
+            <li>G16: Merasa tidak berharga</li>
+            <li>G20: Mudah lelah</li>
+          </ul>
+        </div>
+      </div>
+    </main>
     <footer class="bg-white">
       <div
         class="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24"
       >
         <div class="text-center">
           <h2 class="text-3xl font-extrabold text-gray-900 sm:text-5xl">
-            Customise Your Product
+            MentalCare
           </h2>
 
           <p class="mx-auto mt-4 max-w-sm text-gray-500">
@@ -137,7 +217,7 @@
             href="#"
             class="mt-8 inline-block rounded-full border border-indigo-600 px-12 py-3 text-sm font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
           >
-            Get Started
+            Konsultasi Sekarang
           </a>
         </div>
 
