@@ -15,6 +15,7 @@
           </a>
         </div>
 
+        <!-- Desktop Navigation -->
         <div class="hidden md:block">
           <nav aria-label="Global">
             <ul class="flex items-center gap-6 text-sm">
@@ -34,7 +35,6 @@
                   Symthoms
                 </a>
               </li>
-
               <li>
                 <a
                   class="text-gray-500 transition hover:text-gray-500/75"
@@ -43,7 +43,6 @@
                   Check Mental Health
                 </a>
               </li>
-
               <li>
                 <a
                   class="text-gray-500 transition hover:text-gray-500/75"
@@ -56,6 +55,7 @@
           </nav>
         </div>
 
+        <!-- Mobile Menu Toggle -->
         <div class="flex items-center gap-4">
           <div class="sm:flex sm:gap-4">
             <a
@@ -69,6 +69,7 @@
           <div class="block md:hidden">
             <button
               class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+              id="menu-toggle"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,6 +89,32 @@
           </div>
         </div>
       </div>
+
+      <!-- Mobile Navigation -->
+      <nav
+        class="hidden flex-col gap-4 text-sm text-gray-500 transition md:hidden"
+        id="mobile-menu"
+      >
+        <a
+          class="block px-4 py-2 transition hover:text-gray-500/75"
+          href="/about"
+          >About</a
+        >
+        <a
+          class="block px-4 py-2 transition hover:text-gray-500/75"
+          href="/symthoms"
+          >Symthoms</a
+        >
+        <a
+          class="block px-4 py-2 transition hover:text-gray-500/75"
+          href="/consultation"
+        >
+          Check Mental Health
+        </a>
+        <a class="block px-4 py-2 transition hover:text-gray-500/75" href="#"
+          >Blog</a
+        >
+      </nav>
     </div>
   </header>
   <section
@@ -361,4 +388,13 @@
       </div>
     </div>
   </footer>
+  <script>
+    // JavaScript to toggle mobile menu visibility
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
 </html>
