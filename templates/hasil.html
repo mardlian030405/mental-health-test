@@ -17,8 +17,6 @@
       <p class="text-gray-600 text-center mb-4">
         Berikut adalah hasil diagnosa berdasarkan gejala yang Anda pilih:
       </p>
-
-      <!-- List Hasil Diagnosa -->
       <ul class="bg-blue-50 p-4 rounded-lg shadow-md space-y-4">
         {% for diagnosis, value in results.items() %}
         <li class="flex justify-between items-center text-gray-700">
@@ -29,8 +27,6 @@
         </li>
         {% endfor %}
       </ul>
-
-      <!-- Saran atau Catatan -->
       <div class="mt-6 bg-gray-50 p-4 rounded-lg shadow-sm">
         <h2 class="text-lg font-semibold mb-3 text-gray-700">Saran:</h2>
         <ul class="list-disc list-inside text-gray-600 space-y-2">
@@ -40,8 +36,6 @@
           <li>Jaga pola makan sehat dan aktivitas fisik teratur.</li>
         </ul>
       </div>
-
-      <!-- Tombol Kembali -->
       <div class="flex justify-center mt-8">
         <a
           href="/"
